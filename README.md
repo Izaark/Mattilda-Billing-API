@@ -77,6 +77,8 @@ open http://localhost:8000/docs
 
 ### 5. (Optional) Load Sample Data
 
+> **Note**: Run only on first setup or after clean/reset. Running again will cause duplicate errors.
+
 ```bash
 # Create realistic sample data (schools, students, invoices, payments)
 docker-compose exec backend python scripts/seed.py
@@ -305,10 +307,7 @@ curl http://localhost:8000/api/v1/students/1/statement
 ### Run Tests
 
 ```bash
-# All tests (115 tests, ~5 seconds)
-docker-compose exec backend pytest
-
-# With detailed output
+# All tests
 docker-compose exec backend pytest -v
 
 # Only unit tests (fast)
@@ -429,6 +428,20 @@ docker-compose exec backend alembic downgrade -1
 5. **Router** (HTTP endpoint): `app/api/v1/`
 6. **Tests**: `tests/unit/` and `tests/integration/`
 7. Test in Swagger: http://localhost:8000/docs
+
+### Clean & Reset Project
+
+```bash
+# Stop and remove containers + volumes (clears database)
+docker-compose down -v
+
+# Remove containers, volumes, and images
+docker-compose down -v --rmi all
+
+# Full reset (complete cleanup)
+docker-compose down -v --rmi all
+docker system prune -f
+```
 
 ---
 
