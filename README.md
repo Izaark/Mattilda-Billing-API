@@ -31,14 +31,13 @@ A RESTful API for managing schools, students, invoices, and payments with real-t
 
 ---
 
-## ⚡ Quick Start
+## Quick Start
 
 ### 1. Clone and Setup
 
 ```bash
 # Clone repository
-git clone <repository-url>
-cd Mattilda-Billing-API
+git clone https://github.com/Izaark/Mattilda-Billing-API
 
 # Create environment file
 cp .env.example .env
@@ -98,7 +97,7 @@ curl http://localhost:8000/api/v1/schools/1/statement
 
 ---
 
-## ⚙️ Environment Variables
+## Environment Variables
 
 | Variable | Required | Default | Description |
 |----------|----------|---------|-------------|
