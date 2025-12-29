@@ -38,7 +38,7 @@ A RESTful API for managing schools, students, invoices, and payments with real-t
 ```bash
 # Clone repository
 git clone https://github.com/Izaark/Mattilda-Billing-API
-
+cd Mattilda-Billing-API
 # Create environment file
 cp .env.example .env
 # ⚠️ IMPORTANT: Edit .env and set your API_KEY
